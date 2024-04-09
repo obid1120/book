@@ -1,7 +1,8 @@
 from django.urls import path
 
-from .views import index
+from .views import BookListView, BookListAPIView
 
 urlpatterns = [
-    path('', index, name='index'),
+    path('', BookListView.as_view(), name='index'),
+    path('api/', BookListAPIView.as_view())
 ]
